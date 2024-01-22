@@ -22,13 +22,13 @@ class SimulationEngine(BaseSimulationEngine):
     ###############
 
     def setup(
-        self,
-        announcements: tuple["Ann", ...] = (),
-        BasePolicyCls: type[Policy] = BGPSimplePolicy,
-        non_default_asn_cls_dict: frozendict[int, type[Policy]] = (
-            frozendict()  # type: ignore
-        ),
-        prev_scenario: Optional["Scenario"] = None,
+            self,
+            announcements: tuple["Ann", ...] = (),
+            BasePolicyCls: type[Policy] = BGPSimplePolicy,
+            non_default_asn_cls_dict: frozendict[int, type[Policy]] = (
+                    frozendict()  # type: ignore
+            ),
+            prev_scenario: Optional["Scenario"] = None,
     ) -> frozenset[type[Policy]]:
         """Sets AS classes and seeds announcements"""
 
@@ -40,10 +40,10 @@ class SimulationEngine(BaseSimulationEngine):
         return policies_used
 
     def _set_as_classes(
-        self,
-        BasePolicyCls: type[Policy],
-        non_default_asn_cls_dict: frozendict[int, type[Policy]],
-        prev_scenario: Optional["Scenario"] = None,
+            self,
+            BasePolicyCls: type[Policy],
+            non_default_asn_cls_dict: frozendict[int, type[Policy]],
+            prev_scenario: Optional["Scenario"] = None,
     ) -> frozenset[type[Policy]]:
         """Resets Engine ASes and changes their AS class
 
@@ -54,7 +54,7 @@ class SimulationEngine(BaseSimulationEngine):
         """
 
         policy_classes_used = set()
-        # Done here to save as much time  as possible
+        # Done here to save as much time as possible
         for as_obj in self.as_graph:
             # Delete the old policy and remove references so that RAM can be reclaimed
             del as_obj.policy.as_
@@ -65,9 +65,9 @@ class SimulationEngine(BaseSimulationEngine):
         return frozenset(policy_classes_used)
 
     def _seed_announcements(
-        self,
-        announcements: tuple["Ann", ...] = (),
-        prev_scenario: Optional["Scenario"] = None,
+            self,
+            announcements: tuple["Ann", ...] = (),
+            prev_scenario: Optional["Scenario"] = None,
     ) -> None:
         """Seeds announcement at the proper AS
 
@@ -139,7 +139,7 @@ class SimulationEngine(BaseSimulationEngine):
                 as_obj.policy.propagate_to_providers()
 
     def _propagate_to_peers(
-        self, propagation_round: int, scenario: Optional["Scenario"]
+            self, propagation_round: int, scenario: Optional["Scenario"]
     ):
         """Propagate to peers"""
 
@@ -160,11 +160,12 @@ class SimulationEngine(BaseSimulationEngine):
     def _propagate_to_customers(self, propagation_round: int, scenario: "Scenario"):
         """Propagate to customers"""
 
-        # Propogation ranks go from stubs to input_clique in ascending order
+        # Propagation ranks go from stubs to input_clique in ascending order
         # By customer provider pairs (peers are ignored for the ranks)
-        # So here we start at the highest rank(input_clique) and propagate down
+        # So here we start at the highest rank (input_clique) and propagate
+        # down after we've already collected from customer to provider
         for i, rank in enumerate(reversed(self.as_graph.propagation_ranks)):
-            # There are no incomming Anns at the top
+            # There are no incoming Anns at the top
             if i > 0:
                 for as_obj in rank:
                     as_obj.policy.process_incoming_anns(
@@ -186,7 +187,7 @@ class SimulationEngine(BaseSimulationEngine):
 
     @classmethod
     def __from_yaml_dict__(
-        cls: type["SimulationEngine"], dct: dict[str, Any], yaml_tag: Any
+            cls: type["SimulationEngine"], dct: dict[str, Any], yaml_tag: Any
     ) -> "SimulationEngine":
         """This optional method is called when you call yaml.load()"""
 
