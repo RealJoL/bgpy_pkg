@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 # besides, YamlAble doesn't have slots, so this
 # doesn't matter
 @yaml_info(yaml_tag="Announcement")
-@dataclass(slots=True, frozen=True)
+@dataclass(slots=True, frozen=False)
 class Announcement(YamlAble):
     """BGP Announcement"""
 
@@ -30,8 +30,17 @@ class Announcement(YamlAble):
     traceback_end: bool = False
     # NOTE: must use list here for C++ compatability
     communities: tuple[str, ...] = ()
+    """Number of ASes already traversed on the upstream ramp.
+     Decribed as K in internet draft."""
+    aspa_up_length: Optional[int] = None
+    """ Number of ASes already traversed on the downstream ramp.
+     Described as L in internet draft."""
+    aspa_down_length: Optional[int] = None
+    """ Boolean indicating if the peak of the ASPA path (traversing two equal rank ASes) has already been passed."""
+    aspa_peak_traversed: Optional[bool] = None
 
     def prefix_path_attributes_eq(self, ann: Optional["Announcement"]) -> bool:
+
         """Checks prefix and as path equivalency"""
 
         if ann is None:
@@ -42,8 +51,9 @@ class Announcement(YamlAble):
             raise NotImplementedError
 
     def copy(
-        self, overwrite_default_kwargs: Optional[dict[Any, Any]] = None
+            self, overwrite_default_kwargs: Optional[dict[Any, Any]] = None
     ) -> "Announcement":
+
         """Creates a new ann with proper sim attrs"""
 
         # Replace seed asn and traceback end every time by default
@@ -61,7 +71,6 @@ class Announcement(YamlAble):
 
         False means ann is either valid or unknown
         """
-
         # Not covered by ROA, unknown
         if self.roa_origin is None:
             return False
@@ -102,26 +111,30 @@ class Announcement(YamlAble):
 
         return self.as_path[-1]
 
-    def __str__(self) -> str:
-        return f"{self.prefix} {self.as_path} {self.recv_relationship}"
 
-    def __hash__(self):
-        """Hash func. Needed for ROV++"""
-        return hash(str(self))
+def __str__(self) -> str:
+    return f"{self.prefix} {self.as_path} {self.recv_relationship}"
 
-    ##############
-    # Yaml funcs #
-    ##############
 
-    def __to_yaml_dict__(self) -> dict[str, Any]:
-        """This optional method is called when you call yaml.dump()"""
+def __hash__(self):
+    """Hash func. Needed for ROV++"""
+    return hash(str(self))
 
-        return asdict(self)
 
-    @classmethod
-    def __from_yaml_dict__(
+##############
+# Yaml funcs #
+##############
+
+def __to_yaml_dict__(self) -> dict[str, Any]:
+    """This optional method is called when you call yaml.dump()"""
+
+    return asdict(self)
+
+
+@classmethod
+def __from_yaml_dict__(
         cls: type["Announcement"], dct: dict[str, Any], yaml_tag: Any
-    ) -> "Announcement":
-        """This optional method is called when you call yaml.load()"""
+) -> "Announcement":
+    """This optional method is called when you call yaml.load()"""
 
-        return cls(**dct)
+    return cls(**dct)

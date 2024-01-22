@@ -19,7 +19,7 @@ class Policy(YamlAble, metaclass=ABCMeta):
     def __init_subclass__(cls, *args, **kwargs):
         """This method essentially creates a list of all subclasses
 
-        This is allows us to know all AS types that have been created
+        This allows us to know all AS types that have been created
         """
 
         super().__init_subclass__(*args, **kwargs)
