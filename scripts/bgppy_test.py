@@ -13,6 +13,9 @@ from bgpy.simulation_framework import (
 def main():
     """Runs the defaults"""
 
+    output_dir_parent = Path(__file__).parent.parent.parent
+    output_dir = output_dir_parent / "ms-thesis-joel-braun/script/bgppy_data/"
+
     # Simulation for the paper
     sim = Simulation(
         percent_adoptions=(
@@ -24,9 +27,11 @@ def main():
             SpecialPercentAdoptions.ALL_BUT_ONE,
         ),
         scenario_configs=(
-            ScenarioConfig(ScenarioCls=SubprefixHijack, AdoptPolicyCls=ASPVSimplePolicy),
+            ScenarioConfig(
+                ScenarioCls=SubprefixHijack, AdoptPolicyCls=ASPVSimplePolicy
+            ),
         ),
-        output_dir=Path("../ms-thesis-joel-braun/script/bgppy_data/"),
+        output_dir=output_dir,
         num_trials=5,
         parse_cpus=1,
     )
