@@ -30,14 +30,15 @@ class Announcement(YamlAble):
     traceback_end: bool = False
     # NOTE: must use list here for C++ compatability
     communities: tuple[str, ...] = ()
-    """Number of ASes already traversed on the upstream ramp.
+    """Number of ASes implementing ASPA already traversed on the upstream ramp.
      Decribed as K in internet draft."""
     aspa_up_length: Optional[int] = None
-    """ Number of ASes already traversed on the downstream ramp.
-     Described as L in internet draft."""
+    """ Number of ASes implementing ASPA already traversed on the downstream ramp.
+     Not to be confused with the letter L in ASPA internet draft."""
     aspa_down_length: Optional[int] = None
-    """ Boolean indicating if the peak of the ASPA path (traversing two equal rank ASes) has already been passed."""
-    aspa_peak_traversed: Optional[bool] = None
+    """ Boolean indicating if the peak of the ASPA path (traversing two equal rank/non-attested ASes) 
+    has already been passed. This replaces the K and L check on on path propagation from provider."""
+    aspa_crossed_unattested_or_peak: Optional[bool] = None
 
     def prefix_path_attributes_eq(self, ann: Optional["Announcement"]) -> bool:
 
