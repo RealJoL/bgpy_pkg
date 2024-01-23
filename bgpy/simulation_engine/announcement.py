@@ -112,7 +112,6 @@ class Announcement(YamlAble):
 
         return self.as_path[-1]
 
-
     def __str__(self) -> str:
         return f"{self.prefix} {self.as_path} {self.recv_relationship}"
 
@@ -126,16 +125,15 @@ class Announcement(YamlAble):
     # Yaml funcs #
     ##############
 
-    def __to_yaml_dict__(self) -> dict[str, Any]:
-        """This optional method is called when you call yaml.dump()"""
-
-        return asdict(self)
-
-
     @classmethod
     def __from_yaml_dict__(
             cls: type["Announcement"], dct: dict[str, Any], yaml_tag: Any
     ) -> "Announcement":
         """This optional method is called when you call yaml.load()"""
-
+        
         return cls(**dct)
+
+    def __to_yaml_dict__(self) -> dict[str, Any]:
+        """This optional method is called when you call yaml.dump()"""
+
+        return asdict(self)
