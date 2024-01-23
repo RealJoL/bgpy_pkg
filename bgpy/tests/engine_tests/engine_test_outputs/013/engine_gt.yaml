@@ -17,6 +17,9 @@ as_graph: !yamlable/CAIDAASGraph
             as_path: !!python/tuple
             - 1
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships
@@ -47,6 +50,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 2
             - 1
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships
@@ -78,6 +84,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 2
             - 1
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships
@@ -106,6 +115,9 @@ as_graph: !yamlable/CAIDAASGraph
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships
