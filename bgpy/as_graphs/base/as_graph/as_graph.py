@@ -3,7 +3,6 @@ from typing import Any, Callable, Optional
 from frozendict import frozendict
 from yamlable import yaml_info, YamlAble, yaml_info_decorate
 
-from bgpy.simulation_engine import Announcement
 from .base_as import AS
 
 from bgpy.enums import ASGroups

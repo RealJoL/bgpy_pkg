@@ -35,6 +35,7 @@ from .internals.config_034 import config_034
 from .bgp.config_035 import config_035
 from .rov.config_036 import config_036
 from .rov.config_037 import config_037
+from .aspv.config_038 import config_038
 
 __all__ = [
     "config_001",
@@ -74,6 +75,7 @@ __all__ = [
     "config_035",
     "config_036",
     "config_037",
+    "config_038"
 ]
 
 engine_test_configs = [
@@ -114,4 +116,5 @@ engine_test_configs = [
     config_035,
     config_036,
     config_037,
+    config_038
 ]
