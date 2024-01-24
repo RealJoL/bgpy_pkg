@@ -7,6 +7,7 @@ from .hijack_scenarios import NonRoutedPrefixHijack
 from .hijack_scenarios import SuperprefixPrefixHijack
 from .hijack_scenarios import NonRoutedSuperprefixHijack
 from .hijack_scenarios import NonRoutedSuperprefixPrefixHijack
+from .hijack_scenarios import PathHijack
 from .valid_prefix import ValidPrefix
 
 
@@ -20,4 +21,5 @@ __all__ = [
     "NonRoutedSuperprefixHijack",
     "NonRoutedSuperprefixPrefixHijack",
     "ValidPrefix",
+    "PathHijack"
 ]

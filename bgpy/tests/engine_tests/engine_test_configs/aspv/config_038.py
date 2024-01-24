@@ -12,7 +12,7 @@ from bgpy.simulation_framework import (
 
 config_038 = EngineTestConfig(
     name="038",
-    desc="Multi-peak ASPV-based scenario (Fig. 5 in ROV paper)",
+    desc="Multi-provider ASPV-based scenario (Fig. 5 in ROV paper)",
     scenario_config=ScenarioConfig(
         ScenarioCls=ValidPrefix,
         BasePolicyCls=ASPVSimplePolicy,

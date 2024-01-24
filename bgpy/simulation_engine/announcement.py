@@ -38,7 +38,7 @@ class Announcement(YamlAble):
     aspa_down_length: int = 0
     """ Boolean indicating if the peak of the ASPA path (traversing two equal rank/non-attested ASes)
     has already been passed. This replaces the K and L check on on path propagation from provider."""
-    aspa_crossed_unattested_or_peak: bool = False
+    aspa_crossed_unattested: bool = False
 
     def prefix_path_attributes_eq(self, ann: Optional["Announcement"]) -> bool:
 
