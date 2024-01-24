@@ -32,13 +32,13 @@ class Announcement(YamlAble):
     communities: tuple[str, ...] = ()
     """Number of ASes implementing ASPA already traversed on the upstream ramp.
      Decribed as K in internet draft."""
-    aspa_up_length: Optional[int] = None
+    aspa_up_length: int = 0
     """ Number of ASes implementing ASPA already traversed on the downstream ramp.
      Not to be confused with the letter L in ASPA internet draft."""
-    aspa_down_length: Optional[int] = None
+    aspa_down_length: int = 0
     """ Boolean indicating if the peak of the ASPA path (traversing two equal rank/non-attested ASes)
     has already been passed. This replaces the K and L check on on path propagation from provider."""
-    aspa_crossed_unattested_or_peak: Optional[bool] = None
+    aspa_crossed_unattested_or_peak: bool = False
 
     def prefix_path_attributes_eq(self, ann: Optional["Announcement"]) -> bool:
 
@@ -130,7 +130,7 @@ class Announcement(YamlAble):
             cls: type["Announcement"], dct: dict[str, Any], yaml_tag: Any
     ) -> "Announcement":
         """This optional method is called when you call yaml.load()"""
-        
+
         return cls(**dct)
 
     def __to_yaml_dict__(self) -> dict[str, Any]:

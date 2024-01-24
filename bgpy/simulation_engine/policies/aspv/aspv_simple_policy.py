@@ -21,7 +21,7 @@ class ASPVSimplePolicy(ROVSimplePolicy):
         to determine validity
         """
 
-        if ann.as_path:
+        if not ann.as_path:
             return False
 
         # If the AS_Path is one or two long it becomes valid
@@ -69,7 +69,8 @@ class ASPVSimplePolicy(ROVSimplePolicy):
                     else:
                         return False
                 case Relationships.ORIGIN:
-                    # Route announced by ourselves, will accept to not cause loop
+                    # Route announced by origin directly, will accept
+                    # TODO Set path length
                     pass
                 case _:
                     raise NotImplementedError
