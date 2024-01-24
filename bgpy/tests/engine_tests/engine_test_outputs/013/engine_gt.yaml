@@ -11,12 +11,15 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 1
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships
@@ -40,13 +43,16 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/ROVSimplePolicy
+      policy: !yamlable/ROVSimple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 2
             - 1
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships
@@ -70,7 +76,7 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
@@ -78,6 +84,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 2
             - 1
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships
@@ -101,11 +110,14 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 666
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.0.0.0/8
             recv_relationship: !simulator_codec/Relationships

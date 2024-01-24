@@ -11,12 +11,15 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple
       - 3
-      policy: !yamlable/BGPPolicy
+      policy: !yamlable/BGP
         _local_rib: !simulator_codec/LocalRIB
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 1
             - 3
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
@@ -38,6 +41,9 @@ as_graph: !yamlable/CAIDAASGraph
               unprocessed_ann: !yamlable/Announcement
                 as_path: !!python/tuple
                 - 2
+                aspa_crossed_unattested_or_peak: null
+                aspa_down_length: null
+                aspa_up_length: null
                 communities: !!python/tuple []
                 prefix: 1.2.0.0/16
                 recv_relationship: !simulator_codec/Relationships
@@ -57,6 +63,9 @@ as_graph: !yamlable/CAIDAASGraph
               unprocessed_ann: !yamlable/Announcement
                 as_path: !!python/tuple
                 - 3
+                aspa_crossed_unattested_or_peak: null
+                aspa_down_length: null
+                aspa_up_length: null
                 communities: !!python/tuple []
                 prefix: 1.2.0.0/16
                 recv_relationship: !simulator_codec/Relationships
@@ -74,6 +83,9 @@ as_graph: !yamlable/CAIDAASGraph
               as_path: !!python/tuple
               - 1
               - 3
+              aspa_crossed_unattested_or_peak: null
+              aspa_down_length: null
+              aspa_up_length: null
               communities: !!python/tuple []
               prefix: 1.2.0.0/16
               recv_relationship: !simulator_codec/Relationships
@@ -98,11 +110,14 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPPolicy
+      policy: !yamlable/BGP
         _local_rib: !simulator_codec/LocalRIB
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 2
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
@@ -121,6 +136,9 @@ as_graph: !yamlable/CAIDAASGraph
             1.2.0.0/16: !yamlable/Announcement
               as_path: !!python/tuple
               - 2
+              aspa_crossed_unattested_or_peak: null
+              aspa_down_length: null
+              aspa_up_length: null
               communities: !!python/tuple []
               prefix: 1.2.0.0/16
               recv_relationship: !simulator_codec/Relationships
@@ -144,11 +162,14 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple
       - 1
-      policy: !yamlable/BGPPolicy
+      policy: !yamlable/BGP
         _local_rib: !simulator_codec/LocalRIB
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 3
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
@@ -167,6 +188,9 @@ as_graph: !yamlable/CAIDAASGraph
             1.2.0.0/16: !yamlable/Announcement
               as_path: !!python/tuple
               - 3
+              aspa_crossed_unattested_or_peak: null
+              aspa_down_length: null
+              aspa_up_length: null
               communities: !!python/tuple []
               prefix: 1.2.0.0/16
               recv_relationship: !simulator_codec/Relationships
@@ -190,13 +214,16 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPPolicy
+      policy: !yamlable/BGP
         _local_rib: !simulator_codec/LocalRIB
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 4
             - 1
             - 3
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
@@ -219,6 +246,9 @@ as_graph: !yamlable/CAIDAASGraph
                 as_path: !!python/tuple
                 - 1
                 - 3
+                aspa_crossed_unattested_or_peak: null
+                aspa_down_length: null
+                aspa_up_length: null
                 communities: !!python/tuple []
                 prefix: 1.2.0.0/16
                 recv_relationship: !simulator_codec/Relationships
@@ -237,6 +267,9 @@ as_graph: !yamlable/CAIDAASGraph
               - 4
               - 1
               - 3
+              aspa_crossed_unattested_or_peak: null
+              aspa_down_length: null
+              aspa_up_length: null
               communities: !!python/tuple []
               prefix: 1.2.0.0/16
               recv_relationship: !simulator_codec/Relationships
@@ -260,7 +293,7 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPPolicy
+      policy: !yamlable/BGP
         _local_rib: !simulator_codec/LocalRIB
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
@@ -268,6 +301,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 4
             - 1
             - 3
+            aspa_crossed_unattested_or_peak: null
+            aspa_down_length: null
+            aspa_up_length: null
             communities: !!python/tuple []
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
@@ -291,6 +327,9 @@ as_graph: !yamlable/CAIDAASGraph
                 - 4
                 - 1
                 - 3
+                aspa_crossed_unattested_or_peak: null
+                aspa_down_length: null
+                aspa_up_length: null
                 communities: !!python/tuple []
                 prefix: 1.2.0.0/16
                 recv_relationship: !simulator_codec/Relationships

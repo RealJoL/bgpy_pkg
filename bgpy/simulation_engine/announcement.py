@@ -36,7 +36,7 @@ class Announcement(YamlAble):
     """ Number of ASes implementing ASPA already traversed on the downstream ramp.
      Not to be confused with the letter L in ASPA internet draft."""
     aspa_down_length: Optional[int] = None
-    """ Boolean indicating if the peak of the ASPA path (traversing two equal rank/non-attested ASes) 
+    """ Boolean indicating if the peak of the ASPA path (traversing two equal rank/non-attested ASes)
     has already been passed. This replaces the K and L check on on path propagation from provider."""
     aspa_crossed_unattested_or_peak: Optional[bool] = None
 
@@ -112,30 +112,28 @@ class Announcement(YamlAble):
 
         return self.as_path[-1]
 
-
-def __str__(self) -> str:
-    return f"{self.prefix} {self.as_path} {self.recv_relationship}"
-
-
-def __hash__(self):
-    """Hash func. Needed for ROV++"""
-    return hash(str(self))
+    def __str__(self) -> str:
+        return f"{self.prefix} {self.as_path} {self.recv_relationship}"
 
 
-##############
-# Yaml funcs #
-##############
-
-def __to_yaml_dict__(self) -> dict[str, Any]:
-    """This optional method is called when you call yaml.dump()"""
-
-    return asdict(self)
+    def __hash__(self):
+        """Hash func. Needed for ROV++"""
+        return hash(str(self))
 
 
-@classmethod
-def __from_yaml_dict__(
-        cls: type["Announcement"], dct: dict[str, Any], yaml_tag: Any
-) -> "Announcement":
-    """This optional method is called when you call yaml.load()"""
+    ##############
+    # Yaml funcs #
+    ##############
 
-    return cls(**dct)
+    @classmethod
+    def __from_yaml_dict__(
+            cls: type["Announcement"], dct: dict[str, Any], yaml_tag: Any
+    ) -> "Announcement":
+        """This optional method is called when you call yaml.load()"""
+        
+        return cls(**dct)
+
+    def __to_yaml_dict__(self) -> dict[str, Any]:
+        """This optional method is called when you call yaml.dump()"""
+
+        return asdict(self)
