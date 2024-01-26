@@ -7,7 +7,10 @@ class PathHijack(Scenario):
     def _get_announcements(self, *args, **kwargs) -> tuple[Announcement, ...]:
 
         # TODO Confirm correctness of implementation
-        #  Currently I took a shot in prepending the origin AS to the announced route
+        #  I assume appending the origin AS to the announced route would be ROV conformant
+        #  I also employed subprefix hijack at the same time, I'll remove it later
+        #  See here for route leak prevented by ASPA:
+        #  https://www.manrs.org/2023/02/unpacking-the-first-route-leak-prevented-by-aspa/
 
         anns = list()
         for victim_asn in self.victim_asns:

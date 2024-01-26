@@ -1,6 +1,7 @@
 from frozendict import frozendict
 
 from bgpy.simulation_engine.policies.aspv import ASPVSimplePolicy
+from bgpy.simulation_engine.policies.aspv import ASPVSimpleExpensive
 from bgpy.simulation_framework.scenarios import PathHijack
 from bgpy.tests.engine_tests.utils import EngineTestConfig
 
@@ -16,8 +17,9 @@ from bgpy.as_graphs.base.links.peer_link import PeerLink
 
 as_graph_info_provider_attacker = ASGraphInfo(
     peer_links=frozenset([PeerLink(peer1_asn=2, peer2_asn=ASNs.ATTACKER.value),
+                         # PeerLink(peer1_asn=1, peer2_asn=ASNs.ATTACKER.value),
                           PeerLink(peer1_asn=2, peer2_asn=1),
-                          PeerLink(peer1_asn=1, peer2_asn=ASNs.ATTACKER.value)]),
+                          ]),
     customer_provider_links=frozenset(
         [
             CPLink(provider_asn=1, customer_asn=3),

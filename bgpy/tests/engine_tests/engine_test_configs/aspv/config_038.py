@@ -1,5 +1,6 @@
 from frozendict import frozendict
 
+from bgpy.simulation_engine.policies.aspv import ASPVSimpleExpensive
 from bgpy.simulation_engine.policies.aspv import ASPVSimplePolicy
 from bgpy.tests.engine_tests.as_graph_infos import as_graph_info_003
 from bgpy.tests.engine_tests.utils import EngineTestConfig

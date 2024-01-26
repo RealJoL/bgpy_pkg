@@ -13,6 +13,7 @@ from .policies import ROVSimplePolicy
 from .policies import ROVPolicy
 from .policies import ASPVSimplePolicy
 from .policies import ASPVPolicy
+from .policies import ASPVSimpleExpensive
 
 from .simulation_engines import BaseSimulationEngine
 from .simulation_engines import SimulationEngine
@@ -33,4 +34,5 @@ __all__ = [
     "Policy",
     "BaseSimulationEngine",
     "SimulationEngine",
+    "ASPVSimpleExpensive"
 ]

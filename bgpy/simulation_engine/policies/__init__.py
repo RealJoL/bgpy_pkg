@@ -6,7 +6,9 @@ from .rov import (
 )
 from .aspv import (
     ASPVSimplePolicy,
-    ASPVPolicy)
+    ASPVPolicy,
+    ASPVSimpleExpensive
+)
 
 __all__ = [
     "BGPSimplePolicy",
@@ -15,5 +17,6 @@ __all__ = [
     "ROVSimplePolicy",
     "ROVPolicy",
     "ASPVSimplePolicy",
-    "ASPVPolicy"
+    "ASPVPolicy",
+    "ASPVSimpleExpensive",
 ]

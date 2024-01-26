@@ -2,6 +2,7 @@ from frozendict import frozendict
 
 from bgpy.simulation_engine.policies.rov import ROVSimplePolicy
 from bgpy.simulation_engine.policies.aspv import ASPVSimplePolicy
+from bgpy.simulation_engine.policies.aspv import ASPVSimpleExpensive
 from bgpy.simulation_framework.scenarios import PathHijack
 from bgpy.tests.engine_tests.utils import EngineTestConfig
 
@@ -30,7 +31,7 @@ as_graph_info_provider_attacker = ASGraphInfo(
 )
 config_040 = EngineTestConfig(
     name="040",
-    desc="Multi-peak ASPV-based scenario  with attacker as provider",
+    desc="ASPV-based scenario attacker as peer. This scenario demonstrates ASPVs effectiveness compared to ROV",
     scenario_config=ScenarioConfig(
         ScenarioCls=PathHijack,
         BasePolicyCls=ASPVSimplePolicy,

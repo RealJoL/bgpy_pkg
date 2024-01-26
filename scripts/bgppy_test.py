@@ -2,12 +2,13 @@ from pathlib import Path
 
 from bgpy.simulation_engine import ROVSimplePolicy
 from bgpy.enums import SpecialPercentAdoptions
-from bgpy.simulation_engine.policies.aspv import ASPVSimplePolicy
+from bgpy.simulation_engine.policies.aspv import ASPVSimplePolicy, ASPVSimpleExpensive
 from bgpy.simulation_framework import (
     Simulation,
     SubprefixHijack,
     ScenarioConfig,
 )
+from bgpy.simulation_framework.scenarios import PathHijack
 
 
 def main():
@@ -28,7 +29,7 @@ def main():
         ),
         scenario_configs=(
             ScenarioConfig(
-                ScenarioCls=SubprefixHijack, AdoptPolicyCls=ASPVSimplePolicy
+                ScenarioCls=PathHijack, AdoptPolicyCls=ASPVSimpleExpensive
             ),
         ),
         output_dir=output_dir,
