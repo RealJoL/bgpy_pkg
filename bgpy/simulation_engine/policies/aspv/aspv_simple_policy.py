@@ -1,3 +1,5 @@
+from copy import copy
+
 from bgpy.enums import Relationships
 from bgpy.simulation_engine import Announcement
 from bgpy.simulation_engine.policies.rov import ROVSimplePolicy
@@ -90,3 +92,6 @@ class ASPVSimplePolicy(ROVSimplePolicy):
         return super(ASPVSimplePolicy, self)._valid_ann(  # type: ignore
             ann, *args, **kwargs
         )
+
+    def receive_ann(self, ann: "Ann", accept_withdrawals: bool = False) -> None:
+        super().receive_ann(copy(ann), accept_withdrawals)

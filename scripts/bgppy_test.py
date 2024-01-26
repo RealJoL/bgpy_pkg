@@ -29,7 +29,7 @@ def main():
         ),
         scenario_configs=(
             ScenarioConfig(
-                ScenarioCls=PathHijack, AdoptPolicyCls=ASPVSimpleExpensive
+                ScenarioCls=PathHijack, AdoptPolicyCls=ASPVSimplePolicy
             ),
         ),
         output_dir=output_dir,

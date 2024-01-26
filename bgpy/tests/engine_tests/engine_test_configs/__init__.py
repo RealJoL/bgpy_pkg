@@ -38,6 +38,18 @@ from .rov.config_037 import config_037
 from .aspv.config_038 import config_038
 from .aspv.config_039 import config_039
 from .aspv.config_040 import config_040
+from .aspv.config_41 import config_041
+from .aspv.config_42 import config_042
+from .aspv.config_43 import config_043
+from .aspv.config_44 import config_044
+from .aspv.config_45 import config_045
+from .aspv.config_46 import config_046
+from .aspv.config_47 import config_047
+from .aspv.config_48 import config_048
+from .aspv.config_49 import config_049
+from .aspv.config_50 import config_050
+from .aspv.config_51 import config_051
+from .aspv.config_52 import config_052
 
 __all__ = [
     "config_001",
@@ -80,6 +92,18 @@ __all__ = [
     "config_038",
     "config_039",
     "config_040",
+    "config_041",
+    "config_042",
+    "config_043",
+    "config_044",
+    "config_045",
+    "config_046",
+    "config_047",
+    "config_048",
+    "config_049",
+    "config_050",
+    "config_051",
+    "config_052",
 ]
 
 engine_test_configs = [
@@ -123,4 +147,16 @@ engine_test_configs = [
     config_038,
     config_039,
     config_040,
+    config_041,
+    config_042,
+    config_043,
+    config_044,
+    config_045,
+    config_046,
+    config_047,
+    config_048,
+    config_049,
+    config_050,
+    config_051,
+    config_052,
 ]
