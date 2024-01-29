@@ -259,14 +259,3 @@ class ASGraph(YamlAble):
 
     def __len__(self) -> int:
         return len(self.as_dict)
-
-    #def determine_announcement_aspa_validity(self, ann: Announcement) -> bool:
-
-    #    k = 0
-    #    l = 0
-    #    passed_peak = False
-    #    for i in range(len(ann.as_path) - 1, 1, -1):
-    #        if self.ases[ann.as_path[i-1]] in self.ases[ann.as_path[i]].providers:
-
-    #   self.ases
-    #   pass

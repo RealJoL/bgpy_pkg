@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 # besides, YamlAble doesn't have slots, so this
 # doesn't matter
 @yaml_info(yaml_tag="Announcement")
-@dataclass(slots=True, frozen=False)
+@dataclass(slots=True, frozen=True)
 class Announcement(YamlAble):
     """BGP Announcement"""
 

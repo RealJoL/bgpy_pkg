@@ -14,7 +14,25 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 1
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 1
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: CUSTOMERS
+              value: 3
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 2
       providers: !!python/tuple []
@@ -29,7 +47,26 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 2
+            - 5
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 2
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: CUSTOMERS
+              value: 3
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 2
       providers: !!python/tuple []
@@ -43,7 +80,26 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 3
+            - 1
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 1
+            aspa_up_length: 1
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: PROVIDERS
+              value: 1
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 1
       providers: !!python/tuple
@@ -58,7 +114,26 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 4
+            - 1
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 1
+            aspa_up_length: 1
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: PROVIDERS
+              value: 1
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 1
       providers: !!python/tuple
@@ -74,7 +149,25 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 5
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 1
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: CUSTOMERS
+              value: 3
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 1
       providers: !!python/tuple
@@ -88,7 +181,27 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 7
+            - 3
+            - 1
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 2
+            aspa_up_length: 1
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: PROVIDERS
+              value: 1
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 0
       providers: !!python/tuple
@@ -102,7 +215,27 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 8
+            - 4
+            - 1
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 2
+            aspa_up_length: 1
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: PROVIDERS
+              value: 1
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 0
       providers: !!python/tuple
@@ -116,7 +249,26 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple []
       policy: !yamlable/ASPVSimple
-        _local_rib: !simulator_codec/LocalRIB {}
+        _local_rib: !simulator_codec/LocalRIB
+          1.2.0.0/16: !yamlable/Announcement
+            as_path: !!python/tuple
+            - 666
+            - 1
+            - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 1
+            aspa_up_length: 1
+            communities: !!python/tuple []
+            prefix: 1.2.0.0/16
+            recv_relationship: !simulator_codec/Relationships
+              name: PROVIDERS
+              value: 1
+            roa_origin: 777
+            roa_valid_length: true
+            seed_asn: null
+            timestamp: 0
+            traceback_end: false
+            withdraw: false
         _recv_q: !simulator_codec/RecvQueue {}
       propagation_rank: 0
       providers: !!python/tuple
@@ -134,9 +286,9 @@ as_graph: !yamlable/CAIDAASGraph
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 777
-            aspa_crossed_unattested_or_peak: null
-            aspa_down_length: null
-            aspa_up_length: null
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             communities: !!python/tuple []
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
