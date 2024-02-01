@@ -50,8 +50,18 @@ class Announcement(YamlAble):
     bgpsec_as_path: tuple[int, ...] = ()
     # RFC 9234 OTC attribute (Used in OnlyToCustomers Policy)
     only_to_customers: Optional[bool] = None
+    """Number of ASes implementing ASPA already traversed on the upstream ramp.
+     Decribed as K in internet draft."""
+    aspa_up_length: int = 0
+    """ Number of ASes implementing ASPA already traversed on the downstream ramp.
+     Not to be confused with the letter L in ASPA internet draft."""
+    aspa_down_length: int = 0
+    """ Boolean indicating if the peak of the ASPA path (traversing two equal rank/non-attested ASes)
+    has already been passed. This replaces the K and L check on on path propagation from provider."""
+    aspa_crossed_unattested: bool = False
 
     def prefix_path_attributes_eq(self, ann: Optional["Announcement"]) -> bool:
+
         """Checks prefix and as path equivalency"""
 
         if ann is None:
@@ -62,8 +72,9 @@ class Announcement(YamlAble):
             raise NotImplementedError
 
     def copy(
-        self, overwrite_default_kwargs: Optional[dict[Any, Any]] = None
+            self, overwrite_default_kwargs: Optional[dict[Any, Any]] = None
     ) -> "Announcement":
+
         """Creates a new ann with proper sim attrs"""
 
         # Replace seed asn and traceback end every time by default
@@ -86,7 +97,6 @@ class Announcement(YamlAble):
 
         False means ann is either valid or unknown
         """
-
         # Not covered by ROA, unknown
         if self.roa_origin is None:
             return False
@@ -130,19 +140,23 @@ class Announcement(YamlAble):
     def __str__(self) -> str:
         return f"{self.prefix} {self.as_path} {self.recv_relationship}"
 
+    def __hash__(self):
+        """Hash func. Needed for ROV++"""
+        return hash(str(self))
+
     ##############
     # Yaml funcs #
     ##############
+
+    @classmethod
+    def __from_yaml_dict__(
+            cls: type["Announcement"], dct: dict[str, Any], yaml_tag: Any
+    ) -> "Announcement":
+        """This optional method is called when you call yaml.load()"""
+
+        return cls(**dct)
 
     def __to_yaml_dict__(self) -> dict[str, Any]:
         """This optional method is called when you call yaml.dump()"""
 
         return asdict(self)
-
-    @classmethod
-    def __from_yaml_dict__(
-        cls: type["Announcement"], dct: dict[str, Any], yaml_tag: Any
-    ) -> "Announcement":
-        """This optional method is called when you call yaml.load()"""
-
-        return cls(**dct)

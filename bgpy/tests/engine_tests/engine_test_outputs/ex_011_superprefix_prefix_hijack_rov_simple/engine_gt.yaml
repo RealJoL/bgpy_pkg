@@ -10,12 +10,15 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 666
@@ -34,6 +37,9 @@ as_graph: !yamlable/CAIDAASGraph
             as_path: !!python/tuple
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 666
@@ -63,12 +69,15 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 2
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 666
@@ -87,6 +96,9 @@ as_graph: !yamlable/CAIDAASGraph
             as_path: !!python/tuple
             - 2
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 666
@@ -114,7 +126,7 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple
       - 9
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
@@ -122,6 +134,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 9
             - 4
             - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 9
@@ -148,7 +163,7 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
@@ -157,6 +172,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 8
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 9
@@ -175,6 +193,9 @@ as_graph: !yamlable/CAIDAASGraph
             as_path: !!python/tuple
             - 4
             - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 777
@@ -202,13 +223,16 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 5
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 1
@@ -228,6 +252,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 5
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 1
@@ -256,13 +283,16 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple
       - 9
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 8
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 1
@@ -282,6 +312,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 8
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 1
@@ -312,7 +345,7 @@ as_graph: !yamlable/CAIDAASGraph
       - 3
       - 8
       - 10
-      policy: !yamlable/ROVSimplePolicy
+      policy: !yamlable/ROVSimple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
@@ -320,6 +353,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 8
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 8
@@ -339,6 +375,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 9
             - 4
             - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 4
@@ -367,7 +406,7 @@ as_graph: !yamlable/CAIDAASGraph
       ixp: false
       peers: !!python/tuple
       - 9
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
@@ -376,6 +415,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 8
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 11
@@ -394,6 +436,9 @@ as_graph: !yamlable/CAIDAASGraph
             as_path: !!python/tuple
             - 10
             - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 777
@@ -424,7 +469,7 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
@@ -432,6 +477,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 8
             - 1
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 8
@@ -451,6 +499,9 @@ as_graph: !yamlable/CAIDAASGraph
             - 11
             - 10
             - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 10
@@ -477,13 +528,16 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 12
             - 10
             - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 10
@@ -509,11 +563,14 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 666
@@ -531,6 +588,9 @@ as_graph: !yamlable/CAIDAASGraph
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 666
@@ -558,13 +618,16 @@ as_graph: !yamlable/CAIDAASGraph
       input_clique: false
       ixp: false
       peers: !!python/tuple []
-      policy: !yamlable/BGPSimplePolicy
+      policy: !yamlable/BGP%20Simple
         _local_rib: !simulator_codec/LocalRIB
           1.0.0.0/8: !yamlable/Announcement
             as_path: !!python/tuple
             - 777
             - 2
             - 666
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 2
@@ -582,6 +645,9 @@ as_graph: !yamlable/CAIDAASGraph
           1.2.0.0/16: !yamlable/Announcement
             as_path: !!python/tuple
             - 777
+            aspa_crossed_unattested: false
+            aspa_down_length: 0
+            aspa_up_length: 0
             bgpsec_as_path: !!python/tuple []
             bgpsec_next_asn: null
             next_hop_asn: 777

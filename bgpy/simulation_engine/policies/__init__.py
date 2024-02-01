@@ -11,6 +11,11 @@ from .bgpsec import BGPSecSimplePolicy
 from .only_to_customers import OnlyToCustomersSimplePolicy, OnlyToCustomersPolicy
 from .pathend import PathendSimplePolicy, PathendPolicy
 from .aspa import ASPASimplePolicy, ASPAPolicy
+from .aspv import (
+    ASPVSimplePolicy,
+    ASPVPolicy,
+    ASPVSimpleExpensive
+)
 
 __all__ = [
     "BGPSimplePolicy",
@@ -28,4 +33,7 @@ __all__ = [
     "PathendPolicy",
     "ASPASimplePolicy",
     "ASPAPolicy",
+    "ASPVSimplePolicy",
+    "ASPVPolicy",
+    "ASPVSimpleExpensive",
 ]

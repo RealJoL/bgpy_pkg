@@ -36,10 +36,10 @@ class BGPSimplePolicy(Policy):
     name: str = "BGP Simple"
 
     def __init__(
-        self,
-        _local_rib: Optional[LocalRIB] = None,
-        _recv_q: Optional[RecvQueue] = None,
-        as_: Optional["AS"] = None,
+            self,
+            _local_rib: Optional[LocalRIB] = None,
+            _recv_q: Optional[RecvQueue] = None,
+            as_: Optional["AS"] = None,
     ) -> None:
         """Add local rib and data structures here
 
@@ -51,7 +51,7 @@ class BGPSimplePolicy(Policy):
 
         self._local_rib = _local_rib if _local_rib else LocalRIB()
         self._recv_q = _recv_q if _recv_q else RecvQueue()
-        # This gets set within the AS class so it's fine
+        # This gets set within the AS class, so it's fine
         self.as_: CallableProxyType["AS"] = as_  # type: ignore
 
     # Propagation functionality

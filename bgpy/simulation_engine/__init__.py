@@ -21,6 +21,9 @@ from .policies import PathendSimplePolicy
 from .policies import PathendPolicy
 from .policies import ASPASimplePolicy
 from .policies import ASPAPolicy
+from .policies import ASPVSimplePolicy
+from .policies import ASPVPolicy
+from .policies import ASPVSimpleExpensive
 
 from .simulation_engines import BaseSimulationEngine
 from .simulation_engines import SimulationEngine
@@ -38,6 +41,8 @@ __all__ = [
     "PeerROVPolicy",
     "ROVSimplePolicy",
     "ROVPolicy",
+    "ASPVSimplePolicy",
+    "ASPVPolicy",
     "Policy",
     "BGPSecPolicy",
     "BGPSecSimplePolicy",
@@ -49,4 +54,5 @@ __all__ = [
     "ASPAPolicy",
     "BaseSimulationEngine",
     "SimulationEngine",
+    "ASPVSimpleExpensive"
 ]

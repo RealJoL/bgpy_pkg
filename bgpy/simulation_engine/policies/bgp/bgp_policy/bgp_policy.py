@@ -52,7 +52,7 @@ class BGPPolicy(BGPSimplePolicy):
         propagate_to: "Relationships",
         send_rels: set["Relationships"],
     ) -> None:
-        # Process outging ann is oerriden so this just adds to send q
+        # Process outgoing ann is overridden so this just adds to send q
         super(BGPPolicy, self)._propagate(propagate_to, send_rels)
 
     # Process incoming funcs
@@ -62,7 +62,7 @@ class BGPPolicy(BGPSimplePolicy):
     _withdraw_ann_from_neighbors = _withdraw_ann_from_neighbors
     _select_best_ribs_in = _select_best_ribs_in
 
-    # Must be here since it referes to BGPPolicy
+    # Must be here since it refers to BGPPolicy
     # Could just use super but want to avoid the additional func calls
     def receive_ann(  # type: ignore
         self, ann: "Ann", accept_withdrawals: bool = True
