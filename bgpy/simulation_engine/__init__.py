@@ -9,8 +9,18 @@ from .ann_containers import RecvQueue
 from .policies import Policy
 from .policies import BGPSimplePolicy
 from .policies import BGPPolicy
+from .policies import PeerROVSimplePolicy
+from .policies import PeerROVPolicy
 from .policies import ROVSimplePolicy
 from .policies import ROVPolicy
+from .policies import BGPSecPolicy
+from .policies import BGPSecSimplePolicy
+from .policies import OnlyToCustomersSimplePolicy
+from .policies import OnlyToCustomersPolicy
+from .policies import PathendSimplePolicy
+from .policies import PathendPolicy
+from .policies import ASPASimplePolicy
+from .policies import ASPAPolicy
 from .policies import ASPVSimplePolicy
 from .policies import ASPVPolicy
 from .policies import ASPVSimpleExpensive
@@ -27,11 +37,21 @@ __all__ = [
     "RecvQueue",
     "BGPSimplePolicy",
     "BGPPolicy",
+    "PeerROVSimplePolicy",
+    "PeerROVPolicy",
     "ROVSimplePolicy",
     "ROVPolicy",
     "ASPVSimplePolicy",
     "ASPVPolicy",
     "Policy",
+    "BGPSecPolicy",
+    "BGPSecSimplePolicy",
+    "OnlyToCustomersPolicy",
+    "OnlyToCustomersSimplePolicy",
+    "PathendSimplePolicy",
+    "PathendPolicy",
+    "ASPASimplePolicy",
+    "ASPAPolicy",
     "BaseSimulationEngine",
     "SimulationEngine",
     "ASPVSimpleExpensive"

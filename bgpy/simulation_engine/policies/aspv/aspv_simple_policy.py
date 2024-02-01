@@ -116,20 +116,14 @@ class ASPVSimplePolicy(ROVSimplePolicy):
         if overwrite_default_kwargs:
             self.default_kwargs = overwrite_default_kwargs
 
-        new_announcement = Announcement(
-            prefix=ann.prefix,
-            as_path=(self.as_.asn,) + ann.as_path,
-            timestamp=ann.timestamp,
-            seed_asn=None,
-            roa_valid_length=ann.roa_valid_length,
-            roa_origin=ann.roa_origin,
-            recv_relationship=recv_relationship,
-            withdraw=ann.withdraw,
-            traceback_end=ann.traceback_end,
-            communities=ann.communities,
-            aspa_up_length=new_ann_aspa_up,
-            aspa_down_length=new_ann_aspa_down,
-            aspa_crossed_unattested=new_ann_aspa_peak
+        new_announcement = ann.copy(
+            {
+                "as_path": (self.as_.asn,) + ann.as_path,
+                "recv_relationship": recv_relationship,
+                "aspa_up_length": new_ann_aspa_up,
+                "aspa_down_length": new_ann_aspa_down,
+                "aspa_crossed_unattested": new_ann_aspa_peak,
+            }
         )
 
         return new_announcement

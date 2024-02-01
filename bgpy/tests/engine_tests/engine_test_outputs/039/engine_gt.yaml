@@ -23,7 +23,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: true
             aspa_down_length: 0
             aspa_up_length: 2
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 2
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: PEERS
@@ -59,7 +62,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 0
             aspa_up_length: 2
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 5
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: CUSTOMERS
@@ -94,7 +100,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: true
             aspa_down_length: 1
             aspa_up_length: 2
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 1
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -113,7 +122,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 1
             aspa_up_length: 0
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 666
+            only_to_customers: null
             prefix: 1.2.0.0/32
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -132,7 +144,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 1
             aspa_up_length: 0
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 666
+            only_to_customers: null
             prefix: 1.2.0.1/32
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -151,7 +166,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 1
             aspa_up_length: 0
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 666
+            only_to_customers: null
             prefix: 1.2.0.2/32
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -187,7 +205,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 1
             aspa_up_length: 2
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 2
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -221,7 +242,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 0
             aspa_up_length: 1
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 777
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: CUSTOMERS
@@ -257,7 +281,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: true
             aspa_down_length: 2
             aspa_up_length: 2
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 3
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -292,7 +319,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 2
             aspa_up_length: 2
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 4
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -328,7 +358,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: true
             aspa_down_length: 0
             aspa_up_length: 2
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 2
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: PEERS
@@ -346,7 +379,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 0
             aspa_up_length: 0
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 666
+            only_to_customers: null
             prefix: 1.2.0.0/32
             recv_relationship: !simulator_codec/Relationships
               name: PROVIDERS
@@ -364,7 +400,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 0
             aspa_up_length: 0
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 666
+            only_to_customers: null
             prefix: 1.2.0.1/32
             recv_relationship: !simulator_codec/Relationships
               name: PEERS
@@ -382,7 +421,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 0
             aspa_up_length: 0
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 666
+            only_to_customers: null
             prefix: 1.2.0.2/32
             recv_relationship: !simulator_codec/Relationships
               name: CUSTOMERS
@@ -412,7 +454,10 @@ as_graph: !yamlable/CAIDAASGraph
             aspa_crossed_unattested: false
             aspa_down_length: 0
             aspa_up_length: 0
-            communities: !!python/tuple []
+            bgpsec_as_path: !!python/tuple []
+            bgpsec_next_asn: null
+            next_hop_asn: 777
+            only_to_customers: null
             prefix: 1.2.0.0/16
             recv_relationship: !simulator_codec/Relationships
               name: ORIGIN
