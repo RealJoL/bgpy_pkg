@@ -1,10 +1,12 @@
+from functools import cached_property
 from typing import Any, Optional, TYPE_CHECKING
-from weakref import proxy
+from weakref import proxy, CallableProxyType
 
 from yamlable import yaml_info, YamlAble
 
 if TYPE_CHECKING:
     from bgpy.simulation_engine import Policy
+    from .as_graph import ASGraph
 
 
 @yaml_info(yaml_tag="AS")
@@ -13,9 +15,13 @@ class AS(YamlAble):
 
     def __init__(
         self,
+        *,
         asn: int,
         input_clique: bool = False,
         ixp: bool = False,
+        peer_asns: frozenset[int] = frozenset(),
+        provider_asns: frozenset[int] = frozenset(),
+        customer_asns: frozenset[int] = frozenset(),
         peers: tuple["AS", ...] = tuple(),
         providers: tuple["AS", ...] = tuple(),
         customers: tuple["AS", ...] = tuple(),
@@ -23,9 +29,14 @@ class AS(YamlAble):
         as_rank: Optional[int] = None,
         propagation_rank: Optional[int] = None,
         policy: Optional["Policy"] = None,
+        as_graph: Optional["ASGraph"] = None,
     ) -> None:
         # Make sure you're not accidentally passing in a string here
         self.asn: int = int(asn)
+
+        self.peer_asns: frozenset[int] = peer_asns
+        self.provider_asns: frozenset[int] = provider_asns
+        self.customer_asns: frozenset[int] = customer_asns
 
         self.peers: tuple["AS", ...] = peers
         self.providers: tuple["AS", ...] = providers
@@ -45,6 +56,13 @@ class AS(YamlAble):
         assert policy, "This should never be None"
         self.policy: Policy = policy
         self.policy.as_ = proxy(self)
+
+        # # This is useful for some policies to have knowledge of the graph
+        if as_graph is not None:
+            self.as_graph: CallableProxyType["ASGraph"] = proxy(as_graph)
+        else:
+            # Ignoring this because it gets set properly immediatly
+            self.as_graph = None  # type: ignore
 
     def __lt__(self, as_obj: Any) -> bool:
         if isinstance(as_obj, AS):
@@ -81,7 +99,7 @@ class AS(YamlAble):
 
         return {attr: _format(getattr(self, attr)) for attr in self.db_row_keys}
 
-    @property
+    @cached_property
     def db_row_keys(self) -> tuple[str, ...]:
         return (
             "asn",
@@ -99,31 +117,31 @@ class AS(YamlAble):
     def __str__(self):
         return "\n".join(str(x) for x in self.db_row.items())
 
-    @property
+    @cached_property
     def stub(self) -> bool:
         """Returns True if AS is a stub by RFC1772"""
 
         return len(self.neighbors) == 1
 
-    @property
+    @cached_property
     def multihomed(self) -> bool:
         """Returns True if AS is multihomed by RFC1772"""
 
         return len(self.customers) == 0 and len(self.peers) + len(self.providers) > 1
 
-    @property
+    @cached_property
     def transit(self) -> bool:
         """Returns True if AS is a transit AS by RFC1772"""
 
         return len(self.customers) > 1
 
-    @property
+    @cached_property
     def stubs(self) -> tuple["AS", ...]:
         """Returns a list of any stubs connected to that AS"""
 
         return tuple([x for x in self.customers if x.stub])
 
-    @property
+    @cached_property
     def neighbors(self) -> tuple["AS", ...]:
         """Returns customers + peers + providers"""
 
@@ -153,6 +171,9 @@ class AS(YamlAble):
     def __from_yaml_dict__(cls, dct: dict[Any, Any], yaml_tag: str):
         """This optional method is called when you call yaml.load()"""
 
+        dct["customer_asns"] = frozenset(dct["customers"])
+        dct["peer_asns"] = frozenset(dct["peers"])
+        dct["provider_asns"] = frozenset(dct["providers"])
         return cls(**dct)
 
 
