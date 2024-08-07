@@ -27,14 +27,14 @@ class ASPA(ROV):
     def _valid_ann(self, ann: "Ann", from_rel: Relationships) -> bool:  # type: ignore
         """Returns False if from peer/customer when aspa is set"""
 
-        assert len(set(ann.as_path)) == len(ann.as_path), "We deal with prepending"
+        #assert len(set(ann.as_path)) == len(ann.as_path), "We deal with prepending"
 
-        # Note: This first if check has to be removed if you want to implement
-        # route server to RS-Client behaviour
-        if not self._next_hop_valid(ann):
-            return False
-        # Most ASes recieve anns from providers (moved here for speed)
-        elif from_rel.value == Relationships.PROVIDERS.value:
+        ## Note: This first if check has to be removed if you want to implement
+        ## route server to RS-Client behaviour
+        #if not self._next_hop_valid(ann):
+        #    return False
+        # Most ASes receive anns from providers (moved here for speed)
+        if from_rel.value == Relationships.PROVIDERS.value:
             return self._downstream_check(ann, from_rel)
         elif from_rel.value in (
             Relationships.CUSTOMERS.value,
